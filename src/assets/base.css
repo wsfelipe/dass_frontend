@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background: var(--color-bg);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+}
+
+h1 strong,
+h2 strong,
+h3 strong {
+    font-weight: 700;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
