@@ -1,6 +1,6 @@
 <script setup>
-import DefaultLayout from '@/templates/DefaultLayout.vue';
-import EmployeesPage from '@/pages/EmployeesPage.vue';
+import DefaultLayout from "@/templates/DefaultLayout.vue";
+import EmployeesPage from "@/pages/EmployeesPage.vue";
 </script>
 
 <template>
