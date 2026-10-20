@@ -6,9 +6,6 @@ import ToastContainer from "@/components/organisms/ToastContainer.vue";
 <template>
   <AppHeader />
   <main class="container main"><slot /></main>
-  <footer class="footer">
-    © {{ new Date().getFullYear() }} | Grupo Dass | Todos os direitos reservados.
-  </footer>
   <ToastContainer />
 </template>
 
@@ -25,12 +22,5 @@ import ToastContainer from "@/components/organisms/ToastContainer.vue";
   padding-top: var(--space-6);
   padding-bottom: var(--space-7);
   min-height: calc(100vh - 140px);
-}
-.footer {
-  padding: var(--space-5);
-  text-align: center;
-  font-size: 12px;
-  color: var(--color-muted);
-  border-top: 1px solid var(--color-line);
 }
 </style>
