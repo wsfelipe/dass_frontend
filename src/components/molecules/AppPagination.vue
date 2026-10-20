@@ -1,27 +1,29 @@
 <script setup>
+import { computed } from "vue";
 import AppButton from "@/components/atoms/AppButton.vue";
-defineProps({ page: Number, totalPages: Number, total: Number });
+const props = defineProps({ page: Number, totalPages: Number, total: Number });
 defineEmits(["change"]);
+const safeTotalPages = computed(() => Math.max(1, props.totalPages || 1));
 </script>
 
 <template>
   <nav class="pagination" aria-label="Paginação">
     <span class="pagination__info"
-      >{{ total }} registro(s) · Página {{ page }} de {{ totalPages }}</span
+      >{{ props.total }} registro(s) · Página {{ props.page }} de {{ safeTotalPages }}</span
     >
     <div class="pagination__actions">
       <AppButton
         variant="secondary"
         size="sm"
-        :disabled="page <= 1"
-        @click="$emit('change', page - 1)"
+        :disabled="props.page <= 1"
+        @click="$emit('change', props.page - 1)"
         >Anterior</AppButton
       >
       <AppButton
         variant="secondary"
         size="sm"
-        :disabled="page >= totalPages"
-        @click="$emit('change', page + 1)"
+        :disabled="props.page >= safeTotalPages"
+        @click="$emit('change', props.page + 1)"
         >Próxima</AppButton
       >
     </div>
