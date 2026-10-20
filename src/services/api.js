@@ -11,7 +11,12 @@ export class ApiError extends Error {
 function buildQuery(params = {}) {
   const qs = new URLSearchParams();
   Object.entries(params).forEach(([k, v]) => {
-    if (v !== '' && v !== null && v !== undefined) qs.append(k, v);
+    if (v === '' || v === null || v === undefined) return;
+    if (Array.isArray(v)) {
+      if (v.length > 0) qs.append(k, JSON.stringify(v));
+    } else {
+      qs.append(k, v);
+    }
   });
   const s = qs.toString();
   return s ? `?${s}` : '';
