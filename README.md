@@ -24,8 +24,8 @@ src/
     organisms/   AppHeader, EmployeeFilters, EmployeeTable, EmployeeForm, ConfirmDialog, ToastContainer
   templates/     DefaultLayout
   pages/         EmployeesPage
-  composables/   useEmployees, useDebounce, useToast
-  services/      api.js (fetch), employeeService.js
+  stores/       employees.js, toast.js
+  services/     api.js (fetch), employeeService.js
   utils/         constants, validators (CPF, e-mail, tamanhos, máscara)
   assets/        tokens.css (cores/tipografia), base.css
 ```
